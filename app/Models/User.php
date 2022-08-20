@@ -17,10 +17,11 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $fillable = [
+    protected $fillable = [ //Estos datos son los que espera recibir el modelo, aqui añadiremos las columnas que necesitos para el formulario
         'name',
         'email',
         'password',
+        'username'
     ];
 
     /**
