@@ -44,5 +44,8 @@ class RegisterController extends Controller
             'username' => $request->username
         ]);
 
+        //REDIRECCIONAR
+
+        return redirect()->route('post.index');
     }
 }
