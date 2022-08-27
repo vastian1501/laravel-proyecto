@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.headprofile')
 
 @section('titulo')
     Registro de usuario

@@ -10,7 +10,7 @@
         <img src="{{ asset('img/login.jpg') }}" alt="">
     </div>
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
-        <form action="{{ route('login') }}" method="POST" novalidate>
+        <form action="{{ route('login.create') }}" method="POST" novalidate>
             @csrf
             @if(session('mensaje')) <!-- Si hay un error de validacion en el RegisterController se muestra este error -->
                     <p class="bg-red-500 text-white my-2 rounded-lg text-sm p-2 text-center">

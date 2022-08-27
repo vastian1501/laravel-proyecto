@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    //
     public function index(){
         return view('auth.login');
     }
@@ -26,7 +25,7 @@ class LoginController extends Controller
             //Regresate a la pagina anterior con este mensaje
         }
 
-        return redirect()->route('post.index');
+        return redirect()->route('posts.index', auth()->user()->username);
 
         
     }

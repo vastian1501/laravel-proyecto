@@ -1,7 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.headprofile')
 
 @section('titulo')
-    Perfil de: {{ $user->username}}
+{{ $user->name}} (&commat;{{$user->username}})
+@endsection
+
+@section('cabecera')
+{{ $user->name}} <span>(@</span>{{$user->username}}<span>)</span>
 @endsection
 
 @section('contenido')

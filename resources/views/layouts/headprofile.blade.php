@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @stack('styles')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <title>Devstagram - @yield('titulo')</title>
+    <title>@yield('titulo')</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -15,7 +15,7 @@
     <header class="p-5 border-b bg-white shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black">
-                <a href="{{ route('welcome') }}">Devstagram</a>
+            <a href="{{ route('welcome') }}">Devstagram</a>
             </h1>
 
             @auth
@@ -26,11 +26,11 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
                     </svg>
-                    Subir
+                    subir
                 </a>
 
                 <a href="{{route('posts.index', auth()->user()->username)}}" class="font-bold text-gray-600 text-sm ml-4">
-                    <span class="font-normal text-lg text-cyan-600">&commat;{{ auth()->user()->username}}</span>
+                    <span class="font-normal text-lg text-cyan-600 ">&commat;{{ auth()->user()->username}}</span>
                 </a>
                 <!-- component -->
                 <div class="mx-2 relative">
@@ -44,7 +44,7 @@
                         <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
 
                         <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
-                            <a href="{{route('posts.index', auth()->user()->username)}}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+                            <a href="#" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
                                 perfil
                             </a>
 
@@ -80,7 +80,7 @@
 
     <main class="container mx-auto mt-10">
         <h2 class="font-black text-center text-3xl mb-10">
-            @yield('titulo')
+            @yield('cabecera')
         </h2>
         @yield('contenido')
     </main>
@@ -90,3 +90,4 @@
     </footer>
 </body>
 
+</html>
