@@ -42,4 +42,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function posts(){
+        return $this->hasMany(Post::class);//Un usuario tiene muchos posts
+    }
+    //Accedemos a tinker -> php artisan tinker
+    //$usuario = User::find(7); buscamos el usuario y lo añadimos a una var
+    //$usuario->posts Accedemos a los posts de dicho usuario
 }
