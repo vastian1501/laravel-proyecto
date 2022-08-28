@@ -17,7 +17,15 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'titulo'=>$this->faker->sentence(5),
+            'descripcion'=>$this->faker->sentence(30),
+            'imagen'=>$this->faker->uuid().'.jpg',
+            'user_id'=>$this->faker->randomElement([1,2,3,4])
         ];
+
+        //Ejecutamos-> php artisan tinker
+        //$usuario = User::find(5)
+        //App\Models\Post::factory() o Post::factory()
+        //Post::factory()->times(200)->create()
     }
 }
