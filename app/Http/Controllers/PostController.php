@@ -10,13 +10,18 @@ class PostController extends Controller
 {
     public function __construct()
     {
+        $this->middleware('auth'); //Si no esta autenticado redirecciona a la vista login
     }
 
     public function index(User $user)
     {
-        $this->middleware('auth'); //Si no esta autenticado redirecciona a la vista login
         //dd(auth()->user()); Los datos se miran en attributes
-        return view('dashboard', ['user' => $user]); //Mandamos la variable $user del modelo al parametro view
+
+        //Vamos a filtrar para obtener el id del usuario que nos pasamos por la url /ejemplousuario
+        //$posts = Post::where('user_id', $user->id)->get(); //Con esto se trae todos los post segun el id de la url y las mandamos a la vista
+        $posts = Post::where('user_id', $user->id)->paginate(4); //Con esto pagina los resultados-> hay que editar el tailwind.config pa que muestre el dieseño
+        
+        return view('dashboard', ['user' => $user, 'posts'=>$posts ]); //Mandamos la variable $user del modelo al parametro view para poder obtenerlas en la vista
     }
 
     public function create()
