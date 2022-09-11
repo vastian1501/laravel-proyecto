@@ -22,7 +22,7 @@ class ImagenController extends Controller
         //Le aplicamos un recorte
         $imagenServidor->fit(1000,1000,null,'center');
         //Le damos escalas de grises
-        $imagenServidor->greyscale();
+        //$imagenServidor->greyscale();
         
         //Creamos la ruta donde queremos almacenar la imagen OJO solo es la ruta
         $imagenPath = public_path('uploads').'/'.$nombreImagen;
