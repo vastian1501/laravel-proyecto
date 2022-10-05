@@ -19,6 +19,10 @@ class Post extends Model
         return $this->belongsTo(User::class)->select(['name','username']);
     }
 
+    public function comentario(){
+        return $this->hasMany(Comentario::class);
+    }
+
     //Consulta tinker
     //$post = Post::find(1);
 }
