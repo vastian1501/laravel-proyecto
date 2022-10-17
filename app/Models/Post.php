@@ -23,6 +23,13 @@ class Post extends Model
         return $this->hasMany(Comentario::class);
     }
 
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
+
+    public function checkLike(User $user){
+        return $this->likes->contains('user_id', $user->id);//Devuelve true si la tabla likes es su columna userid contiene el user id que le `pasemos
+    }
     //Consulta tinker
     //$post = Post::find(1);
 }

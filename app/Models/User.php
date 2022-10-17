@@ -46,6 +46,10 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(Post::class);//Un usuario tiene muchos posts
     }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
     //Accedemos a tinker -> php artisan tinker
     //$usuario = User::find(7); buscamos el usuario y lo añadimos a una var
     //$usuario->posts Accedemos a los posts de dicho usuario
