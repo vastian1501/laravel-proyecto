@@ -29,9 +29,9 @@
                     subir
                 </a>
 
-                <a href="{{route('posts.index', auth()->user()->username)}}" class="font-bold text-gray-600 text-sm ml-4">
+                {{-- <a href="{{route('posts.index', auth()->user()->username)}}" class="font-bold text-gray-600 text-sm ml-4">
                     <span class="font-normal text-lg text-cyan-600 ">&commat;{{ auth()->user()->username}}</span>
-                </a>
+                </a> --}}
                 <!-- component -->
                 <div class="mx-2 relative">
                     <div x-data="{ dropdownOpen: false }" class="relative ">
@@ -48,7 +48,7 @@
                                 perfil
                             </a>
 
-                            <a href="#" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+                            <a href="{{ route('perfil.index') }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
                                 ajustes
                             </a>
                             <form action="{{ route('logout') }}" method="POST">
