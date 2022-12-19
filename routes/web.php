@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ComentarioController;
 use App\Http\Controllers\FollowerController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImagenController;
 use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Route;
@@ -24,9 +25,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', HomeController::class)->middleware('auth')->name('home');
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register'); //Usamos el helper {{ route('register') }} y podemos dar el nombre que queramos "/nombre-ruta"
 Route::post('/register', [RegisterController::class, 'store']);
