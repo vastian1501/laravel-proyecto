@@ -50,6 +50,21 @@ class User extends Authenticatable
     public function likes(){
         return $this->hasMany(Like::class);
     }
+
+    //Almacena los seguidores de un usuario(cuando yo siguo a una persona)
+    public function followers(){//Se especifica todo por que nos hemos salido de las convenciones de laravel
+        return $this->belongsToMany(User::class, 'followers', 'user_id', 'follower_id'); //El metodo de followers en la tabla de followers pertenece a muchos usuarios
+    }
+    //Comprobar si un usuario ya sigue a otro
+    public function siguiendo(User $user){
+        return $this->followers->contains($user->id);
+    }
+
+    //Almacena los que seguimos
+    public function followings(){
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'user_id'); 
+    }
+
     //Accedemos a tinker -> php artisan tinker
     //$usuario = User::find(7); buscamos el usuario y lo añadimos a una var
     //$usuario->posts Accedemos a los posts de dicho usuario
