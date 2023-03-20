@@ -7,7 +7,7 @@
 @section('contenido')
 <div class="md:flex justify-center md:gap-10 md:items-center ">
     <div class="md:w-6/12 p-5">
-        <img src="{{ asset('img/login.jpg') }}" alt="">
+        <img src="{{ asset('img/registrar.jpg') }}" alt="" class="rounded-md shadow-lg">
     </div>
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
         <form action=" {{ route('register') }} " method="POST" novalidate>
@@ -112,7 +112,7 @@
                 @enderror
             </div>
 
-            <input type="submit" value="Crear Cuenta" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
+            <input type="submit" value="Crear Cuenta" class="bg-lime-600 hover:bg-lime-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
         </form>
     </div>
 </div>

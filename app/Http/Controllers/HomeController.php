@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -12,8 +13,10 @@ class HomeController extends Controller
 
         $ids = auth()->user()->followings->pluck('id')->toArray();//Extraemos el id de los usuarios que seguimos
         $posts = Post::whereIn('user_id', $ids)->latest()->paginate(20);
-        
+        $user = User::find(auth()->user()->id);
 
-        return view('home', [ 'posts' => $posts]);
+        //dd($user->imagen);
+        
+        return view('home', [ 'posts' => $posts, 'user'=>$user]);
     }
 }

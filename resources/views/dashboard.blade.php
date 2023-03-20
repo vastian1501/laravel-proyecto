@@ -12,7 +12,7 @@
 <div class="flex justify-center">
     <div class="m-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
         <div class="w-8/12 lg:w-6/12 md:px-5">
-            <img src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="Imagen usuario">
+            <img src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="Imagen usuario" class=" rounded-full shadow-sm">
 
         </div>
         <div class="md:w-8/12 lg:w-6/12 px-5 flex flex-col items-center md:justify-center md:items-start py-10 md:py-10">

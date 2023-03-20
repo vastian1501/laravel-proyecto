@@ -1,26 +1,27 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Ultimas publicaciones
+    Bienvenido {{ $user->name}} (&commat;{{$user->username}})
 @endsection
 
 @section('contenido')
     @if ($posts->count())
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-4 mx-5 md:mx-5">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-8 mx-5 md:mx-5 p-8">
             @foreach ($posts as $post)
-                <div class=" w-3/4">
-                    <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}" >
-                        <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="{{ $post->titulo }}" srcset="" class="">
-                        
+                <div class="w-4/4 rounded-md shadow-xl">
+                    <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}">
+                        <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="{{ $post->titulo }}" srcset=""
+                            class="rounded-t-md">
+
                     </a>
                     <div class="bg-white px-2 py-3">
                         <a href="{{ route('posts.index', $post->user->username) }}"
-                            class="font-bold">&commat;{{ $post->user->username }}</a>
-                        <p class="text-sm text-gray-500">
-                            {{ $post->created_at->diffForHumans() }}
-                        </p>
-                        <p class="mt-5">
+                            class="font-bold">&commat;{{ $post->user->username }} - <span class="font-normal">{{ $post->titulo }}</span> </a>
+                        <p class="mt-2">
                             {{ $post->descripcion }}
+                        </p>
+                        <p class="text-sm text-gray-500 my-2">
+                            {{ $post->created_at->diffForHumans() }}
                         </p>
                     </div>
                 </div>

@@ -12,10 +12,10 @@
 </head>
 
 <body class="bg-gray-100">
-    <header class="p-5 border-b bg-white shadow-xl">
+    <header class="p-3 border-b bg-white shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-black">
-            <a href="{{ route('home') }}">Devstagram</a>
+            <h1 class="text-3xl font-black text-lime-500">
+                <a href="{{ route('home') }}">Devs<span class="font-medium">tagram</span></a>
             </h1>
 
             @auth
@@ -37,7 +37,7 @@
                     <div x-data="{ dropdownOpen: false }" class="relative ">
                         <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                             <span class="sr-only">Open user menu</span>
-                            <img class="h-10 w-10 rounded-full border-2 border-gray-500" src="{{ asset('img/usuario.svg')}}" alt="">
+                            <img class="h-10 w-10 rounded-full border border-lime-500" src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="">
 
                         </button>
 
@@ -67,9 +67,9 @@
             @endauth
 
             @guest
-            <nav class="flex gap-2 items-center">
-                <a href="{{ route('login') }}" class="font-bold uppercase text-gray-600 text-sm">Login</a>
-                <a href="{{ route('register') }}" class="font-bold uppercase text-gray-600 text-sm">Crear Cuenta</a>
+            <nav class="flex gap-4 items-center">
+                <a href="{{ route('login') }}" class="font-semibold uppercase text-lime-600 text-sm hover:text-lime-500">Login</a>
+                <a href="{{ route('register') }}" class="font-semibold uppercase text-lime-600 text-sm hover:text-lime-500">Crear Cuenta</a>
             </nav>
             @endguest
 

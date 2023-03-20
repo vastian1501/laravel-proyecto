@@ -7,7 +7,7 @@
 @section('contenido')
 <div class="md:flex justify-center md:gap-10 md:items-center ">
     <div class="md:w-6/12 p-5">
-        <img src="{{ asset('img/login.jpg') }}" alt="">
+        <img src="{{ asset('img/login.jpg') }}" alt="" class="rounded-md shadow-lg">
     </div>
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-lg">
         <form action="{{ route('login.create') }}" method="POST" novalidate>
@@ -62,7 +62,7 @@
                 <label for="remember" class="text-gray-500 text-sm" >Recordar mi cuenta</label>
             </div>
 
-            <input type="submit" value="Iniciar Sesion" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
+            <input type="submit" value="Iniciar Sesion" class="bg-lime-600 hover:bg-lime-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
         </form>
     </div>
 </div>

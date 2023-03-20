@@ -27,7 +27,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $user = User::find(auth()->user()->id);
+        return view('posts.create', compact('user'));
     }
 
     //La diferencia entre create y store es que store almacena los datos que se envian en la BD

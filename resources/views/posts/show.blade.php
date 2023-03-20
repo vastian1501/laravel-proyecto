@@ -11,7 +11,7 @@
             <div class="md:w-1/2 p-5">
                 <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="" class="w-50">
 
-                <div class="p-3 flex items-center gap-4">
+                <div class="py-4 flex items-center gap-4">
                     @auth
                     
                     @if ( $post->checkLike( auth()->user() ) )
@@ -45,12 +45,13 @@
                 </div>
 
                 <div>
-                    <p class="font-bold">{{ $post->user->username }}</p>
-                    <p class="text-sm text-gray-500">
-                        {{ $post->created_at->diffForHumans() }}
-                    </p>
-                    <p class="mt-5">
+                    <a href="{{ route('posts.index', $post->user->username) }}"
+                        class="font-bold">&commat;{{ $post->user->username }} - <span class="font-normal">{{ $post->titulo }}</span> </a>
+                    <p class="mt-2">
                         {{ $post->descripcion }}
+                    </p>
+                    <p class="text-sm text-gray-500 my-2">
+                        {{ $post->created_at->diffForHumans() }}
                     </p>
                 </div>
                 {{-- Solo puede eliminar la publicacion si esta autenticado y si es el creador del post --}}

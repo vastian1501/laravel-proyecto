@@ -13,8 +13,9 @@ class PerfilController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(User $user)
+    public function index()
     {
+        $user = User::find(auth()->user()->id);
         return view('perfil.index', ['user' => $user]);
         //php artisan route:list
     }
