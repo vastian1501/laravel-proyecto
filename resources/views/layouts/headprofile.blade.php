@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @stack('styles')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <title>@yield('titulo')</title>
+    <title>RedSocial - @yield('titulo')</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 min-h-screen">
     <header class="p-3 border-b bg-white shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black text-lime-500">
-                <a href="{{ route('home') }}">Devs<span class="font-medium">tagram</span></a>
+                <a href="{{ route('home') }}">Red<span class="font-medium">Social</span></a>
             </h1>
 
             @auth
@@ -37,7 +37,7 @@
                     <div x-data="{ dropdownOpen: false }" class="relative ">
                         <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                             <span class="sr-only">Open user menu</span>
-                            <img class="h-10 w-10 rounded-full border border-lime-500" src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="">
+                            <img class="h-10 w-10 rounded-full border border-lime-500" src="{{ auth()->user()->imagen ? asset('perfiles').'/'.auth()->user()->imagen : asset('img/usuario.svg')}}" alt="">
 
                         </button>
 
@@ -85,8 +85,8 @@
         @yield('contenido')
     </main>
 
-    <footer class="mt-10 text-center p-5 text-gray-500 font-medium uppercase ">
-        Devstagram - Todos los derechos reservados {{ now()->year }}
+    <footer class="w-full my-4 text-center p-2 text-gray-500 font-medium uppercase text-base absolute bottom-0 ">
+        {{ now()->year }} &copy; RedSocial - Todos los derechos reservados 
     </footer>
 </body>
 

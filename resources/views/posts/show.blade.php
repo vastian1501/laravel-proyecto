@@ -114,8 +114,19 @@
                     @if ($post->comentario->count())
                         @foreach ($post->comentario as $comentario)
                             <div class="p-5 border-gray-300 border-b">
-                                <a href="{{ route('posts.index', $comentario->user->username) }}"
-                                    class="font-bold">&commat;{{ $comentario->user->username }}</a>
+                                <div class="flex justify-start">
+                                    <a href="{{ route('posts.index', $comentario->user->username) }}"
+                                        class="font-bold">&commat;{{ $comentario->user->username }}</a>
+                                    @if ( $comentario->user->id === auth()->user()->id )
+                                        <form action="{{ route('comentarios.delete', $comentario) }}" method="POST">
+                                            {{-- Mehotd spoofing, el navegador solo acepta POST Y GET --}}
+                                            @method('DELETE')
+                                            @csrf
+                                            <input type="submit" value="Eliminar"
+                                                class="text-red-500 font-normal mx-2 hover:underline cursor-pointer">
+                                        </form>
+                                    @endif
+                                </div>
                                 <p>{{ $comentario->comentario }}</p>
                                 <p class="text-sm text-gray-400">{{ $comentario->created_at->diffForHumans() }}</p>
                             </div>

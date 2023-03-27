@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @stack('styles')
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <title>Devstagram - @yield('titulo')</title>
+    <title>RedSocial - @yield('titulo')</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-lime-50">
+<body class="bg-lime-50 min-h-screen">
     <header class="p-3 border-b bg-white shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black text-lime-500">
-                <a href="{{ route('home') }}">Devs<span class="font-medium">tagram</span></a>
+                <a href="{{ route('home') }}">Red<span class="font-medium">Social</span></a>
             </h1>
 
             @auth
@@ -48,7 +48,7 @@
                                 perfil
                             </a>
 
-                            <a href="#" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
+                            <a href="{{ route('perfil.index') }}" class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
                                 ajustes
                             </a>
                             <form action="{{ route('logout') }}" method="POST">
@@ -85,8 +85,8 @@
         @yield('contenido')
     </main>
 
-    <footer class="mt-10 text-center p-5 text-gray-500 font-medium uppercase ">
-        {{ now()->year }} &copy; Devstagram - Todos los derechos reservados 
+    <footer class="w-full my-4 text-center p-2 text-gray-500 font-medium uppercase text-base bottom-0 ">
+        {{ now()->year }} &copy; RedSocial - Todos los derechos reservados 
     </footer>
 </body>
 

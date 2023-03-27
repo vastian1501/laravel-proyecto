@@ -27,4 +27,10 @@ class ComentarioController extends Controller
         //Imprimir un mensaje
         return back()->with('mensaje', 'Comentario agregado con exito');
     }
+
+    public function destroy(Comentario $comentario){
+        $comentario->delete();
+
+        return back();
+    }
 }
