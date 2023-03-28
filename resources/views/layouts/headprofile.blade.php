@@ -11,7 +11,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-100 min-h-screen">
+<body class="bg-gray-100 min-h-screen flex flex-col">
     <header class="p-3 border-b bg-white shadow-xl">
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-3xl font-black text-lime-500">
@@ -78,15 +78,17 @@
         </div>
     </header>
 
-    <main class="container mx-auto mt-10">
+    <main class="container mx-auto mt-10 flex-grow">
         <h2 class="font-black text-center text-3xl mb-10">
             @yield('cabecera')
         </h2>
         @yield('contenido')
     </main>
 
-    <footer class="w-full my-4 text-center p-2 text-gray-500 font-medium uppercase text-base absolute bottom-0 ">
-        {{ now()->year }} &copy; RedSocial - Todos los derechos reservados 
+    <footer class="w-full my-4 text-center p-2 text-gray-500 font-medium uppercase text-base  bottom-0">
+        <p class="">
+            {{ now()->year }} &copy; RedSocial - Todos los derechos reservados 
+        </p>
     </footer>
 </body>
 
