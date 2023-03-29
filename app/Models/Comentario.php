@@ -15,7 +15,7 @@ class Comentario extends Model
     ];
 
     public function user(){
-        return $this->belongsTo(User::class)->select(['name','username']);
+        return $this->belongsTo(User::class)->select(['name','username','id']);
     }
 
     public function post(){

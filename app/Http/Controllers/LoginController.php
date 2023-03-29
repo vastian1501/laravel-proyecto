@@ -25,7 +25,7 @@ class LoginController extends Controller
             //Regresate a la pagina anterior con este mensaje
         }
 
-        return redirect()->route('posts.index', auth()->user()->username);
+        return redirect()->route('home', auth()->user()->username);
 
         
     }

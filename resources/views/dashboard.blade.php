@@ -10,8 +10,8 @@
 
 @section('contenido')
 <div class="flex justify-center">
-    <div class="m-full md:w-8/12 lg:w-6/12 flex flex-col items-center md:flex-row">
-        <div class="w-8/12 lg:w-6/12 md:px-5">
+    <div class="md:w-8/12 lg:w-5/12 flex flex-col items-center justify-center md:flex-row">
+        <div class="w-8/12 lg:w-5/12 md:px-5">
             <img src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="Imagen usuario" class=" rounded-full shadow-sm">
 
         </div>
