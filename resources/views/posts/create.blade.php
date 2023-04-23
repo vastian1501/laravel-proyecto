@@ -9,15 +9,15 @@ Nuevo posts
 @endpush
 
 @section('contenido')
-<div class="md:flex md:items-center">
-    <div class="md:w-1/2 px-10">
-        <form action="{{ route('imagenes.store') }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-2 w-full h-96 rounded flex 
-        flex-col justify-center items-center">
+<div class="md:flex md:items-center flex-col justify-between ">
+    <div class="md:w-1/2 px-0 ">
+        <form action="{{ route('imagenes.store') }}" method="POST" enctype="multipart/form-data" id="dropzone" class="dropzone border-dashed border-lime-400 text-lime-600 border-1 w-full h-56 rounded flex 
+        flex-col justify-center items-center @error('imagen')border-red-400 text-red-400 @enderror">
         @csrf
         </form>
     </div>
 
-    <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-0">
+    <div class="md:w-1/2 p-10 bg-white rounded-lg shadow-xl mt-10 md:mt-10">
         <form action=" {{ route('posts.store') }} " method="POST" novalidate>
             @csrf
             <div class="mb-5">
@@ -60,7 +60,7 @@ Nuevo posts
                 </p>
                 @enderror
             </div>
-            <input type="submit" value="Crear Publicación" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
+            <input type="submit" value="Publicar" class="bg-lime-600 hover:bg-lime-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
         </form>
     </div>
 

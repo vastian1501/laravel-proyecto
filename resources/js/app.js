@@ -22,12 +22,12 @@ const dropzone = new Dropzone('#dropzone',{
     }
 })
 dropzone.on('success', (file,response)=>{
-    console.log(response);
+    //console.log(response);
     document.querySelector('[name="imagen"]').value = response.imagen;
 })
 
 dropzone.on('error', (file, message)=>{
-    console.log(message);
+    //console.log(message);
 })
 
 dropzone.on('removedfile', (file)=>{

@@ -29,7 +29,7 @@
                     Subir
                 </a>
 
-                <a href="{{route('posts.index', auth()->user()->username)}}" class="font-bold text-gray-600 text-sm ml-4">
+                <a href="{{route('posts.index', auth()->user()->username)}}" class="font-bold text-gray-600 text-sm ml-2">
                     <span class="font-normal text-lg text-cyan-600">&commat;{{ auth()->user()->username}}</span>
                 </a>
                 <!-- component -->
@@ -37,7 +37,7 @@
                     <div x-data="{ dropdownOpen: false }" class="relative ">
                         <button @click="dropdownOpen = !dropdownOpen" class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
                             <span class="sr-only">Open user menu</span>
-                            <img class="h-10 w-10 rounded-full border border-lime-500" src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="">
+                            <img class="h-10 w-10 rounded-full border border-gray-300" src="{{ $user->imagen ? asset('perfiles').'/'.$user->imagen : asset('img/usuario.svg')}}" alt="">
 
                         </button>
 

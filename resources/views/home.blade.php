@@ -76,11 +76,7 @@
                             <p class="py-2 font-medium my-2 text-gray-600">&commat;{{ $comentario->user->username }} <span class="font-normal"> {{ $comentario->comentario }} </span> <span class="text-gray-400 font-normal text-sm">{{ $comentario->created_at->diffForHumans() }}</span></p>    
                         @endforeach
                     </div>
-                @else
-                <div class="m-2 p-2  border-gray-400 shadow-md rounded-md bg-lime-50">
-                    <p class="py-2 font-normal my-2 text-gray-600">Todavía nadie ha comentado nada, empieza a comentar...</span></p>    
-                    
-                </div>
+                
                 @endif
             @endforeach
         </div>
