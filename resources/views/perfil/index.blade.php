@@ -10,7 +10,7 @@
 
 @section('contenido')
 <div class="md:flex md:justify-center">
-    <div class="md:w-1/2 bg-white shadow p-6">
+    <div class="md:w-1/2 bg-white shadow px-6 py-12">
         <form method="POST" action="{{ route("perfil.store") }}" enctype="multipart/form-data" class="mt-10 md:mt-0">
             @csrf
             <div class="mb-5">
@@ -49,7 +49,7 @@
                 />
             </div>
 
-            <input type="submit" value="Guardar Cambios" class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
+            <input type="submit" value="Guardar Cambios" class="bg-lime-600 hover:bg-lime-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
 
         </form>
 

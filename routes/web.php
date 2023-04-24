@@ -51,6 +51,9 @@ Route::get('/editar-perfil', [PerfilController::class, 'index'])->name('perfil.i
 Route::post('/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store');
 
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
+//Esta ruta definida por una solicitud GET, para una URL que tiene un PARAMETRO de ruta dinámico {user:username}.
+//El parámetro de ruta dinámico especifica que se espera un valor para este parámetro en la URL
+// y que el valor debe coincidir con el campo username de la tabla de usuarios en la base de datos.
 
 //Siguiendo usuarios
 Route::post('/{user:username}/follow', [FollowerController::class, 'store'])->name('users.follow');

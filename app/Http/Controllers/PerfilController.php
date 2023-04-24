@@ -12,7 +12,10 @@ class PerfilController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        //Antes de que se ejecute cualquier método en este controlador, primero ejecutará el middleware "auth" para verificar 
+        //si el usuario ha iniciado sesión. Si el usuario no ha iniciado sesión, se le redirigirá a la página de inicio de sesión.
     }
+    
     public function index()
     {
         $user = User::find(auth()->user()->id);

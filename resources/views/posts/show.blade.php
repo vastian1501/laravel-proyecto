@@ -9,7 +9,7 @@
     @section('contenido')
         <div class="container mx-auto flex">
             <div class="md:w-1/2 p-5">
-                <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="" class="w-50">
+                <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="" class="w-50 shadow-sm rounded-sm">
 
                 <div class="py-4 flex items-center justify-between gap-4">
                     @auth
@@ -65,9 +65,9 @@
 
                 <div>
                     <a href="{{ route('posts.index', $post->user->username) }}"
-                        class="font-bold">&commat;{{ $post->user->username }} - <span
-                            class="font-normal">{{ $post->titulo }}</span> </a>
-                    <p class="mt-2">
+                        class="font-medium">&commat;{{ $post->user->username }} - <span
+                            class="font-medium text-lime-600">{{ $post->titulo }}</span> </a>
+                    <p class="mt-2 text-lime-600">
                         {{ $post->descripcion }}
                     </p>
                     <p class="text-sm text-gray-500 my-2">
@@ -84,12 +84,12 @@
                         </div>
                     @endif
                     @auth
-                        <p class="text-xl font-bold text-center mb-4">Escribe un comentario en esta imagen</p>
+                        <p class="text-xl text-lime-600 font-medium text-center mb-10 uppercase">Escribe un comentario en esta imagen</p>
                         <form action="{{ route('comentarios.store', ['post' => $post, 'user' => $user]) }}" method="POST">
                             @csrf
                             <div class="mb-5">
                                 <label for="comentario" class="mb-2 block uppercase text-gray-500 font-bold">
-                                    Escribe un comentario
+                                    escribir Comentario
                                 </label>
                                 <textarea id="comentario" name="comentario" type="text" placeholder="Escribe tu comentario"
                                     class="border p-3 w-full rounded-lg @error('comentario')
@@ -104,7 +104,7 @@
                                 @enderror
                             </div>
                             <input type="submit" value="Comentar"
-                                class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
+                                class="bg-lime-600 hover:bg-lime-700 transition-colors cursor-pointer uppercase font-bold w-full p-3 text-white rounded-lg">
 
                         </form>
                     @endauth

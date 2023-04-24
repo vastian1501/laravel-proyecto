@@ -1,7 +1,7 @@
 @extends('layouts.headprofile')
 
 @section('titulo')
-Nuevo posts
+Crear Publicación
 @endsection
 
 @push('styles')

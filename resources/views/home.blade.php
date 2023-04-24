@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('titulo')
-    Bienvenido {{ $user->name}} (&commat;{{$user->username}})
+    Hola &commat;{{$user->username}}
 @endsection
 
 @section('contenido')
     @if ($posts->count())
-    <div class="flex flex-row w-full p-8">
-        <div class="w-3/4 grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-8 mx-5 md:mx-5 ">
+    <div class="flex flex-col sm:flex-row w-full sm:p-8  ">
+        <div class="sm:w-3/4 grid sm:grid-cols-2 gap-4 sm:gap-8 mx-5 md:mx-5">
             @foreach ($posts as $post)
                 <div class="w-4/4 rounded-md shadow-xl">
                     <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}">
@@ -66,7 +66,8 @@
                 {{ $posts->links() }}
             </div>
         </div>
-        <div class="w-1/4 bg-lime-200 rounded-md shadow-lg ">
+
+        <div class="invisible sm:visible w-1/4 bg-lime-200 rounded-md shadow-lg ">
             <h1 class="px-2 py-4 text-center text-xl font-medium uppercase text-lime-800 ">Últimos comentarios</h1>
             @foreach ( $posts as $post)
                 @if($post->comentario->count())

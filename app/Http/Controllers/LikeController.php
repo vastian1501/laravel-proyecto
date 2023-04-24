@@ -11,6 +11,7 @@ class LikeController extends Controller
         $post->likes()->create([
             'user_id'=>$request->user()->id
         ]);
+        //Crea una nueva entrada en la tabla "likes" en la base de datos
 
         return back();
     }

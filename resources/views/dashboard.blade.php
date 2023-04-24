@@ -55,7 +55,7 @@
                             <input 
                                 type="submit" 
                                 value="Seguir"
-                                class="bg-blue-500 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer hover:bg-blue-400 hover:animate-pulse"
+                                class="bg-lime-500 text-white uppercase rounded-md px-6 py-1 text-xs font-bold cursor-pointer hover:bg-lime-600 hover:animate-pulse"
                                 >
                             </form>
                         
@@ -65,7 +65,7 @@
                             <input 
                                 type="submit" 
                                 value="Dejar de seguir"
-                                class="bg-red-500 text-white uppercase rounded-lg px-3 py-1 text-xs font-bold cursor-pointer hover:red-blue-400 hover:animate-pulse"
+                                class="bg-red-500 text-white uppercase rounded-md px-6 py-1 text-xs font-bold cursor-pointer hover:bg-red-600 hover:animate-pulse"
                                 >
                         </form>
                         
@@ -80,14 +80,19 @@
     </div>
 </div>
 
-<section class="container mx-auto mt-10 bg-white shadow-md">
-    <h2 class="text-4xl text-center font-black py-5 my-10">Publicaciones</h2>
+<section class="container mx-auto mt-10 bg-white shadow-md rounded-md">
+    <div class="flex items-center justify-center">
+        <img src="{{ asset('img/logo.png') }}" alt="" srcset="" class="w-10 mr-2 mt-10 mb-5">
+        <h2 class="text-3xl text-center font-bold py-5 mt-10 mb-5 uppercase text-lime-500">Publicaciones</h2>
+        <img src="{{ asset('img/logo.png') }}" alt="" srcset="" class="w-10 ml-2 mt-10 mb-5">
+
+    </div>
     @if ($posts->count())
     <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mx-5 md:mx-10">
         @foreach ($posts as $post )
-        <div>
+        <div >
             <a href="{{ route('posts.show', ['post'=> $post, 'user'=> $user]) }}">
-                <img src="{{ asset('uploads').'/'.$post->imagen }}" alt="{{ $post->titulo }}" srcset="">
+                <img class="rounded-md" src="{{ asset('uploads').'/'.$post->imagen }}" alt="{{ $post->titulo }}" srcset="">
 
             </a>
         </div>

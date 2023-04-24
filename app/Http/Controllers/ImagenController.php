@@ -31,5 +31,7 @@ class ImagenController extends Controller
         $imagenServidor->save($imagenPath);
 
         return response()->json(['imagen'=>$nombreImagen]);
+        //Devolvemos una respuesta JSON al cliente que ha realizado la solicitud HTTP. 
+        //la respuesta JSON contiene la información del nombre de la imagen que se ha subido al servidor.
     }
 }
