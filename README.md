@@ -1,64 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# LimeLo - Proyecto DAW 
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+La aplicación que he realizado es una pequeña red social elaborada con Laravel, se basa
+en que un usuario puede subir fotos, y estas fotos llamadas posts o publicaciones, pueden
+ser comentadas por otros usuarios y se puede dar “me gusta” a la publicación.
 
-## About Laravel
+Aparte un usuario puede seguir a otro usuario, y esto genera que el usuario pueda ver
+todas las publicaciones de las personas que sigue en la vista principal.
+Independientemente he generado un sistema de rutas con el nombre del usuario, con
+esto se puede visitar el perfil de los distintos usuarios de la red social, tan solo con saber
+su nombre de usuario, sin necesidad de saber su id.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Y para terminar un usuario puede
+editar su foto de perfil y el nombre de usuario.
+Desde luego, para acceder a la aplicación se ha creado un sistema de registro de usuarios
+e inicio de sesión, una vez se hayan registrado en la aplicación.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Tecnologias empleadas
 
-## Learning Laravel
+[Laravel](https://laravel.com/), este es un framework de PHP
+gratis y de código abierto que brinda un conjunto de herramientas para crear
+aplicaciones modernas. Posee un ecosistema integral que combina funciones integradas
+y una variedad de paquetes y extensiones compatibles.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Aparte incluye un ORM que nos facilita el contacto de nuestra aplicación en Laravel con
+una base de datos relacional donde solo tendremos que hacer un llamado al modelo de la
+entidad que se necesita y empezar a operar sobre ella desde el controlador. He usado
+[MYSQL](https://www.mysql.com/) como sistema de gestión de bases de datos relacional.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Para los estilos del frontend de la aplicación he usado [Tailwind CSS](https://tailwindcss.com/), este es un framework de
+CSS que permite un desarrollo ágil, basado en clases de utilidad que se pueden aplicar
+con facilidad en el código HTML y unos flujos de desarrollo que permiten optimizar
+mucho el peso del código CSS.
 
-## Laravel Sponsors
+Además, Laravel incluye un motor de plantillas potente, conocido como Blade, que nos
+permite modularizar y estilizar a un gran nivel nuestro HTML.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+La aplicación utiliza una arquitectura de software bastante conocida, MVC. Utilizada
+para separar el código por sus distintas responsabilidades, manteniendo distintas capas
+que se encargan de hacer una tarea muy concreta, lo que ofrece beneficios diversos.
 
-### Premium Partners
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
+## Prueba del proyecto en local
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para probar este proyecto de Laravel 9 en local, se necesita PHP ^8.0.2 o superior, composer 2.5 o superior, nodejs 16 y npm. Para ello nos dirigimos a la carpeta del proyecto y ejecutamos los siguientes comandos
 
-## Code of Conduct
+Instalamos las dependecias de composer
+```bash
+  composer install
+```
+Instalamos las dependecias de Node
+```bash
+  npm install
+```
+Y antes de ejecutar las migraciones, editamos las variables de entorno del archivo .env, con nuestras credenciales de nuestra base de datos. A continuación ejecutamos la migraciones
+```bash
+  php artisan migrate
+```
+Para lanzar el servidor 
+```bash
+  php artisan serve
+```
+Para que se apliquen los estilos de TailwindCSS
+```bash
+  npm run dev
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+## Demo
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+
+Hay dos usuarios creados para poder probar la aplicación
+
+#### Usuario Javier
+- email: javier@javier.com
+- pass: 123123123
+#### Usuario Juan
+- email: juan@juan.com
+- pass: 123123123
+
+#### URL
+http://proyecto.javieratiencia.site/
+
 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
