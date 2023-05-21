@@ -14,7 +14,7 @@ class ComentarioController extends Controller
         //dd('Publicando comentario..');
         //Validar 
         $this->validate($request, [
-            'comentario' => 'required|max:255|min:2',
+            'comentario' => 'required|max:255|min:2|not_in:puta,sexo',
         ]);
 
         //Almacenar 
