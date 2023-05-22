@@ -90,7 +90,7 @@
         @yield('contenido')
     </main>
 
-    <footer class="w-full my-4 text-center p-2 text-gray-500 font-medium uppercase text-base  bottom-0">
+    <footer class="w-full my-4 text-center p-2 text-gray-500 font-medium uppercase text-sm md:text-base  bottom-0">
         <p class="">
             {{ now()->year }} &copy; LimeLo - Todos los derechos reservados 
         </p>

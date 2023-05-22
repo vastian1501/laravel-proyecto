@@ -7,7 +7,7 @@
 @push('styles')
 
     @section('contenido')
-        <div class="container mx-auto flex">
+        <div class="container mx-auto md:flex">
             <div class="md:w-1/2 p-5">
                 <img src="{{ asset('uploads') . '/' . $post->imagen }}" alt="" class="w-50 shadow-sm rounded-sm">
 

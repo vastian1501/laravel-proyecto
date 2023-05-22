@@ -24,7 +24,7 @@ Crear Publicación
                 <label for="titulo" class="mb-2 block uppercase text-gray-500 font-bold">
                     Titulo
                 </label>
-                <input id="titulo" name="titulo" type="text" placeholder="Titulo de la publicacion" class="border p-3 w-full rounded-lg @error('titulo')
+                <input id="titulo" name="titulo" type="text" placeholder="Titulo de la publicación" class="border p-3 w-full rounded-lg @error('titulo')
                         border-red-500
                     @enderror" value="{{ old('titulo') }}" /><!-- con "old 'name' " obtenemos el valor del input name-->
 
@@ -40,7 +40,7 @@ Crear Publicación
                 <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">
                     Descripción
                 </label>
-                <textarea id="descripcion" name="descripcion" type="text" placeholder="Escribe aqui algo" class="border p-3 w-full rounded-lg @error('descripcion')
+                <textarea id="descripcion" name="descripcion" type="text" placeholder="Escribe algo aquí" class="border p-3 w-full rounded-lg @error('descripcion')
                         border-red-500
                     @enderror" />{{ old('descripcion') }}</textarea><!-- con "old 'name' " obtenemos el valor del input name-->
 
