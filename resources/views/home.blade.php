@@ -72,7 +72,11 @@
             @foreach ( $posts as $post)
                 @if($post->comentario->count())
                     <div class="m-2 p-2  border-gray-400 shadow-md rounded-md bg-lime-50">
-                        <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}" class=" font-medium uppercase text-gray-800 py-2 border-b">{{ $post->titulo }}  <span class="font-normal normal-case">de </span> <span class="normal-case">&commat;{{ $post->user->username }}</span>  <span class="font-normal normal-case text-gray-300 text-right"> {{ $post->created_at->diffForHumans() }}</span></a>
+                        <a href="{{ route('posts.show', ['post' => $post, 'user' => $post->user]) }}" >
+                            <p class="mx-auto text-start font-medium uppercase text-gray-800 py-2 border-b w-full">
+                                {{ $post->titulo }}  <span class="font-normal normal-case">de </span> <span class="normal-case">&commat;{{ $post->user->username }}</span>
+                            </p>
+                        </a>
                         @foreach ( $post->comentario as $comentario )
                             <p class="py-2 font-medium my-2 text-gray-600">&commat;{{ $comentario->user->username }} <span class="font-normal"> {{ $comentario->comentario }} </span> <span class="text-gray-400 font-normal text-sm">{{ $comentario->created_at->diffForHumans() }}</span></p>    
                         @endforeach
